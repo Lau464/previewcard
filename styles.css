@@ -1,0 +1,193 @@
+/* Customer properties */
+
+:root {
+
+    /* Colors */
+    --blanco: hsl(0, 0%, 100%);
+    --azulClaro: hsl(215, 51%, 70%);
+    --celeste: hsl(178, 100%, 50%);
+
+    --azulOscBody: hsl(217, 54%, 11%);
+    --azulOscCard: hsl(216, 50%, 16%);
+    --azulOscLine: hsl(215, 32%, 27%);
+
+    /* Fonts */
+    --fuente: "Outfit", sans-serif;
+}
+
+/* Globals */
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--azulOscBody);
+    font-family: var(--fuente);
+    font-size: 1.8rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 30rem;
+    margin: 8rem auto;
+    padding: 2rem;
+    background-color: var(--azulOscCard);
+    border-radius: 2rem;
+}
+
+.imagen-contenedor {
+    position: relative;
+    width: 100%;
+    max-width: 30rem;
+    overflow: hidden;
+}
+
+.imagen-hover{
+    position: absolute;
+    background-color: var(--celeste);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.imagen-hover-activa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events:none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.imagen-hover-activa::before {
+    content: '';
+    background-image: url(../img/icon-view.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 5rem;
+    height: 5rem;
+}
+
+.imagen-contenedor:hover .imagen-hover {
+    opacity: .5;
+}
+
+.imagen-contenedor:hover .imagen-hover-activa {
+    opacity: 1;
+}
+
+.imagen {
+    width: 100%;
+    display: block;
+    border-radius: 1rem;
+}
+
+
+.descripcion__heading {
+    color: var(--blanco);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    display: inline-block;   
+}
+
+.descripcion__heading:hover {
+    color: var(--celeste);
+}
+
+.descripcion__texto {
+    color: var(--azulClaro);
+    font-size: 1.6rem;
+}
+
+.valores {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+    border-bottom: 1px solid var(--azulOscLine);
+}
+
+.valores__precio {
+    color: var(--celeste);
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.valores__precio::before {
+    content: '';
+    background-image: url(../img/icon-ethereum.svg);
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.valores__dias {
+    color: var(--azulClaro);
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.valores__dias::before {
+    content: '';
+    background-image: url(../img/icon-clock.svg);
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.autor {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.autor__imagen {
+    width: 4rem;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid var(--blanco);
+}
+
+.autor__titulo {
+    color: var(--azulClaro);
+    font-size: 1.4rem;
+}
+
+.autor__nombre {
+    color: var(--blanco);
+}
+
+.autor__nombre:hover {
+    color: var(--celeste);
+}
