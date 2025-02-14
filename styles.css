@@ -27,9 +27,14 @@ html {
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--azulOscBody);
     font-family: var(--fuente);
     font-size: 1.8rem;
+    margin: 0;
+    height: 100vh ;
 }
 
 a {
@@ -39,7 +44,6 @@ a {
 .contenedor {
     width: 90%;
     max-width: 30rem;
-    margin: 8rem auto;
     padding: 2rem;
     background-color: var(--azulOscCard);
     border-radius: 2rem;
